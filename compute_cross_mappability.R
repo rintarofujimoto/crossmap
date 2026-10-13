@@ -4,43 +4,43 @@ suppressMessages(library(data.table))
 suppressMessages(library(intervals))
 
 args <- arg_parser('program')
-args <- add_argument(args, '-annot', 
+args <- add_argument(args, '--annot', 
                      help='exon and UTR annotation file (txt)',
                      default='/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/annot/annot.exon_utr.txt')
-args <- add_argument(args, '-mappability',
+args <- add_argument(args, '--mappability',
                      help='mappability file',
                      default = '/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/gene_mappability/gene_mappability.txt')
-args <- add_argument(args, '-kmer', 
+args <- add_argument(args, '--kmer', 
                      help='ambiguous kmer directory',
                      default='/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/ambiguous_kmers')
-args <- add_argument(args, '-align', 
+args <- add_argument(args, '--align', 
                      help='kmer alignment directory',
                      default='/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/ambiguous_kmers_alignment')
-args <- add_argument(args, '-index', 
+args <- add_argument(args, '--index', 
                      help='bowtie index prefix',
                      default='/work-zfs/abattle4/lab_data/hg19/prebuilt_bowtie_index/hg19')
-args <- add_argument(args, '-n1',
+args <- add_argument(args, '--n1',
                      help='compute cross-mappability from n1-th to n2-th gene in the mappabiity file. negative number to use all genes.',
                      default=-1)
-args <- add_argument(args, '-n2',
+args <- add_argument(args, '--n2',
                      help='compute cross-mappability from n1-th to n2-th gene in the mappabiity file.  negative number to use all genes.',
                      default=-1)
-args <- add_argument(args, '-mismatch',
+args <- add_argument(args, '--mismatch',
                      help='maximum number of mismatch for alignment',
                      default=2)
-args <- add_argument(args, '-max_chr', 
+args <- add_argument(args, '--max_chr', 
                      help='maximum number of chromosomes to load in memory',
                      default=7)
-args <- add_argument(args, '-max_gene', 
+args <- add_argument(args, '--max_gene', 
                      help='maximum number of genes to align before cleaning alignments',
                      default=100)
-args <- add_argument(args, '-initonly', 
+args <- add_argument(args, '--initonly', 
                      help='initialize required resources only, without computing cross-mappability',
                      default=FALSE)
-args <- add_argument(args, '-dir_name_len',
+args <- add_argument(args, '--dir_name_len',
                      help='length of the sub-directory names in ambiguous kmer directory.',
                      default=12)
-args <- add_argument(args, '-verbose', 
+args <- add_argument(args, '--verbose', 
                      help='show computation status if verbose > 0',
                      default=1)
 args <- add_argument(args, '-o',

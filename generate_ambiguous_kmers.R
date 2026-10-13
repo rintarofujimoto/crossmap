@@ -6,37 +6,37 @@ suppressMessages(library(intervals))
 suppressMessages(library(seqinr))
 
 args <- arg_parser('program')
-args <- add_argument(args, '-mappability',
+args <- add_argument(args, '--mappability',
                      help='mappability file',
                      default = '/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/gene_mappability/gene_mappability.txt')
-args <- add_argument(args, '-genome', 
+args <- add_argument(args, '--genome', 
                      help='genome sequence directory',
                      default='/work-zfs/abattle4/lab_data/hg19')
-args <- add_argument(args, '-annot', 
+args <- add_argument(args, '--annot', 
                      help='exon and UTR annotation file (txt)',
                      default='/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/annot/annot.exon_utr.txt')
-args <- add_argument(args, '-k_exon', 
+args <- add_argument(args, '--k_exon', 
                      help='k-mer length for exon',
                      default=75)
-args <- add_argument(args, '-k_utr', 
+args <- add_argument(args, '--k_utr', 
                      help='k-mer length for utr',
                      default=36)
-args <- add_argument(args, '-kmap_exon', 
+args <- add_argument(args, '--kmap_exon', 
                      help='bedgraph file containing k-mer mappabilities where k=k_exon',
                      default='/work-zfs/abattle4/lab_data/annotation/kmer_alignability_hg19/wgEncodeCrgMapabilityAlign75mer.bed')
-args <- add_argument(args, '-kmap_utr', 
+args <- add_argument(args, '--kmap_utr', 
                      help='bedgraph file containing k-mer mappabilities where k=k_utr',
                      default='/work-zfs/abattle4/lab_data/annotation/kmer_alignability_hg19/wgEncodeCrgMapabilityAlign36mer.bed')
-args <- add_argument(args, '-th1',
+args <- add_argument(args, '--th1',
                      help='starting appability threshold. genes w/ avg mappability >= th1 are included.',
                      default=0)
-args <- add_argument(args, '-th2',
+args <- add_argument(args, '--th2',
                      help='ending appability threshold. genes w/ avg mappability < th2 are included.',
                      default=1.0)
-args <- add_argument(args, '-dir_name_len',
+args <- add_argument(args, '--dir_name_len',
                      help='length of the sub-directory names. First dir_name_len letters from gene form the subdirectory name.',
                      default=12)
-args <- add_argument(args, '-verbose', 
+args <- add_argument(args, '--verbose', 
                      help='show computation status if verbose > 0',
                      default=1)
 args <- add_argument(args, '-o',

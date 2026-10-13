@@ -4,7 +4,7 @@ suppressMessages(library(data.table))
 suppressMessages(library(stringr))
 
 args <- arg_parser('program')
-args <- add_argument(args, '-gtf', 
+args <- add_argument(args, '--gtf', 
                      help='gtf file',
                      default='/work-zfs/abattle4/lab_data/annotation/gencode.v26/gencode.v26.annotation.gtf')
 args <- add_argument(args, '-f',

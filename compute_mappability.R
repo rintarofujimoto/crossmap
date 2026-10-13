@@ -9,22 +9,22 @@ suppressMessages(library(stats))
 suppressMessages(library(argparser))
 
 args <- arg_parser('program')
-args <- add_argument(args, '-annot', 
+args <- add_argument(args, '--annot', 
                      help='exon and UTR annotation file (txt)',
                      default='/work-zfs/abattle4/ashis/progres/crossmap/test_hg19/annot/annot.exon_utr.txt')
-args <- add_argument(args, '-k_exon', 
+args <- add_argument(args, '--k_exon', 
                      help='k-mer length for exon',
                      default=75)
-args <- add_argument(args, '-k_utr', 
+args <- add_argument(args, '--k_utr', 
                      help='k-mer length for utr',
                      default=36)
-args <- add_argument(args, '-kmap_exon', 
+args <- add_argument(args, '--kmap_exon', 
                      help='bedgraph file containing k-mer mappabilities where k=k_exon',
                      default='/work-zfs/abattle4/lab_data/annotation/kmer_alignability_hg19/wgEncodeCrgMapabilityAlign75mer.bed')
-args <- add_argument(args, '-kmap_utr', 
+args <- add_argument(args, '--kmap_utr', 
                      help='bedgraph file containing k-mer mappabilities where k=k_utr',
                      default='/work-zfs/abattle4/lab_data/annotation/kmer_alignability_hg19/wgEncodeCrgMapabilityAlign36mer.bed')
-args <- add_argument(args, '-verbose', 
+args <- add_argument(args, '--verbose', 
                      help='show computation status if verbose > 0',
                      default=1)
 args <- add_argument(args, '-o', 
