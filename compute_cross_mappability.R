@@ -218,6 +218,14 @@ find_and_save_cross_mappability <- function(g, chromosomes, delete_alignment=F, 
                                 stop(sprintf('problem in reading a bowtie alignment file: %s.\nplease delete the alignment file and check bowtie settings.', align_fn))
                                 return()
                               })
+  
+  if(is.null(align_dt) || nrow(align_dt) == 0){
+    verbose_print(paste('no alignment for gene', g, '- skipped'))
+    cat(g, '\n', file = paste0(out_dir, '/skipped_genes.txt'), append = TRUE, sep = '')
+    if(delete_alignment == T) file.remove(align_fn)
+    return()
+  }
+
   align_dt$kmer= align_dt$kmer+1  # convert to 1-based k-mer index
     
   # read k-mer occurences from file
